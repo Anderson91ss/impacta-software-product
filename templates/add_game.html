@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="row">
+    <div class="col-5 mx-auto">
+        <h3>Registre</h3><hr>
+        <form method="post" action="{{url_for('add_game')}}">
+            <div class="form-group">
+                <label>Nome_Jogo</label>
+                <input type="text" name="nome_jogo" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Lancamento</label>
+                <input type="text" name="lancamento" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Plataforma</label>
+                <input type="text" name="plataforma" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Genero</label>
+                <input type="text" name="genero" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Desenvolvedora</label>
+                <input type="text" name="desenvolvedora" required class="form-control">
+            </div>
+        </br>
+            <input type="submit" value="Adicionar" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
