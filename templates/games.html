@@ -1,5 +1,12 @@
 {% extends 'layout.html' %}
+
+{% block titulo %}
+    Inserir Novo jogo
+{% endblock %}
+
 {% block body %}
+<h2 style="text-align: center;">Lista de Jogos</h2>
+    <hr>
 <h3 class='text-center text-muted mb-3'></h3>
 <p class="text-right"> <a href="{{url_for('add_game')}}" class="btn btn-primary">+Novo Jogo</a></p>
 <table class="table table-striped">
@@ -16,7 +23,7 @@
     <tbody>
         {% for row in datas %}
       <tr>
-        <td>{{loop.index}}</td>
+        <td>{{loop.games}}</td>
         <td>{{row.NOME_JOGO}}</td>
         <td>{{row.LANCAMENTO}}</td>
         <td>{{row.PLATAFORMA}}</td>
