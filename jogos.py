@@ -7,6 +7,11 @@ app=Flask(__name__)
 
 #-----------------------------------------------------------------------------------------------------------
 
+@app.route("/")
+def index():
+    return render_template ("login.html")
+
+
 
 def verificar_usuario(username, password):
     con = sql.connect('registro_jogo.db')
@@ -18,12 +23,6 @@ def verificar_usuario(username, password):
         return True
     else:
         return False
-
-#-----------------------------------------------------------------------------------------------------------
-
-@app.route("/")
-def index():
-    return render_template ("login.html")
 
 
 
