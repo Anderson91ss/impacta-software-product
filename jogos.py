@@ -11,7 +11,26 @@ app=Flask(__name__)
 def index():
     return render_template ("login.html")
 
+def registrar_usuario_db(username, password):
+    con = sql.connect('registro_jogo.db')
+    cur = con.cursor()
+    cur.execute('INSERT INTO usuarios_jogo(username,password) values (?,?)', (username, password))
+    con.commit()
+    con.close()
 
+
+@app.route('/register', methods=["POST", "GET"])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        registrar_usuario_db(username, password)
+        return redirect(url_for('index'))
+
+    else:
+        return render_template('register.html')
+    
 
 def verificar_usuario(username, password):
     con = sql.connect('registro_jogo.db')

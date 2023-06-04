@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block titulo %}
+    Registre-se Agora
+{% endblock %}
+
+{% block body %}
+<h2 style="text-align: center;">Registre-se</h2>
+<hr>
+<div class="container">
+  <form action="/register" method="post">
+  <div class="mb-3">
+    <label for="Username" class="form-label">Nome Usuario</label>
+    <input type="text" class="form-control" id="Username" name="username">
+  </div>
+  <div class="mb-3">
+    <label for="Password" class="form-label">Senha</label>
+    <input type="password" class="form-control" id="Password" name="password">
+  </div>
+  <button type="submit" class="btn btn-primary">Registrar</button>
+</form>
+</div>
+{% endblock %}
